@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Desafío Django</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <div style="padding: 20px">
+            <h2 style="color: green">Lista de Familiares</h2>
+
+            {% for familiar in familiares %}
+            <p>Nombre: {{familiar.name}}</p>
+            <p>Apellido: {{familiar.lastname}}</p>
+            <p>Edad: {{familiar.age}}</p>
+            <p>Fecha de Nacimiento: {{familiar.date_birth}}</p>
+            <h4>Hijos: </h4>
+            {% if familiar.children %}
+                <span style="color: blue">Tiene hijos</span>
+                {% else %}
+                <span style="color: orange">No tiene hijos</span>
+                {% endif %}
+            <p>*********************************</p>
+            {% endfor %}
+        </div>
+    </body>
+</html>
