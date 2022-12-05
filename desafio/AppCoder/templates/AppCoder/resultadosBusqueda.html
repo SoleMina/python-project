@@ -1,0 +1,26 @@
+{% extends 'AppCoder/padre.html' %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class='mb-5'>RESULTADOS DE LA BÚSQUEDA</h1>
+{% endblock %}
+
+{% block contenido_cambia %}
+
+{% if productos %}
+<div class="container pt-4">
+    <ul>
+        {% for producto in productos %}
+         <li><p> Producto: {{ producto.name }}</p></li>
+         <li><p>Empresa: {{ producto.company }}</p></li>
+         <br>
+        {% endfor %}
+    </ul>
+</div>
+{% else %}
+<p>NO HAY PRODUCTOS CON ESE NOMBRE</p>
+
+{% endif %}
+
+{% endblock %}

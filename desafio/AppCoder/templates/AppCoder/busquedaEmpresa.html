@@ -1,0 +1,21 @@
+{% extends 'AppCoder/padre.html' %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class='mb-5'>FORMULARIO DE BÚSQUEDA DE EMPRESAS</h1>
+{% endblock %}
+
+{% block contenido_cambia %}
+<div class="container">
+  <h1 class='mb-5 text-center pt-5'>EMPRESA</h1>
+
+  <form action="{% url 'buscar' %}" method="GET">
+    <input type="text" name="name" id="name" />
+    <input type="submit" value="Buscar Empresa" />
+  </form>
+</div>
+
+  {{ mensaje }}
+
+{% endblock %}
